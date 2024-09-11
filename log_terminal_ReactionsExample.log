@@ -1,0 +1,121 @@
+user@linux:~/rede_reacional_lite$ ./bin/MAGSOLexExamples -Reactions
+
+MAG-SOLex molecular representation: a methodology for handling complex molecules in algorithms
+Example of using the MAG-SOLex representation.
+by Diego Telles, Karina Costa & Tarcisio Dantas
+PETROBRAS - CENPES
+UNICAMP - DEPro
+Aug 31 2024 as 20:37:33
+
+Reaction calculations example
+
+MAG and SOLex representations of the reactants.
+
+MAG:
+mol,bond,Atom i,Atom j,Info,Core,Type
+0,0,0,1,0,0,2
+0,1,1,2,0,0,2
+0,2,2,3,0,0,2
+0,3,3,4,0,0,2
+0,4,4,5,0,0,2
+0,5,5,0,0,0,2
+0,6,1,6,1,0,1
+0,7,6,7,1,0,1
+0,8,7,8,1,0,1
+0,9,8,9,1,0,1
+0,10,9,2,1,0,1
+0,11,7,10,999,0,0
+0,12,10,11,999,0,0
+0,13,11,12,999,0,0
+0,14,10,13,999,0,0
+0,15,-1,-1,-1,-1,-1
+
+SOLex:
+mol-core:A6,A4,A3,A2,N6,N5,N4a,N4n,N3a,N3m,N3n,N2n,N2a,N2m,N2f,N1a,N1m,N1n,Rp,Rm,Rn,Ra,br,br2,MEn,MEa,IHo,IHn,AAa,AAm,AAn,NS,RS,ANa,ANn,NN,RN,NO,RO,KO,Ni,VO,RCn,Arr
+0-total: 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+0-core1: 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+
+Evaluating the possible reactions:
+
+--------------- MOLECULA 0 ---------------
+Reação aplicada: Saturacao de anel A6: m0 -> m1
+Reação aplicada: Desalquilacao: m1 -> m2 + m3
+--------------- MOLECULA 2 ---------------
+--------------- MOLECULA 3 ---------------
+
+
+MAG and SOLex representations of the set of generated molecules (reactants and products):
+
+Figure 10 of the article
+MAG:
+mol,bond,Atom i,Atom j,Info,Core,Type
+0,0,0,1,0,0,2
+0,1,1,2,0,0,2
+0,2,2,3,0,0,2
+0,3,3,4,0,0,2
+0,4,4,5,0,0,2
+0,5,5,0,0,0,2
+0,6,1,6,1,0,1
+0,7,6,7,1,0,1
+0,8,7,8,1,0,1
+0,9,8,9,1,0,1
+0,10,9,2,1,0,1
+0,11,7,10,999,0,0
+0,12,10,11,999,0,0
+0,13,11,12,999,0,0
+0,14,10,13,999,0,0
+0,15,-1,-1,-1,-1,-1
+
+1,0,0,1,0,0,1
+1,1,1,2,0,0,1
+1,2,2,3,0,0,1
+1,3,3,4,0,0,1
+1,4,4,5,0,0,1
+1,5,5,0,0,0,1
+1,6,1,6,1,0,1
+1,7,6,7,1,0,1
+1,8,7,8,1,0,1
+1,9,8,9,1,0,1
+1,10,9,2,1,0,1
+1,11,7,10,999,0,0
+1,12,10,11,999,0,0
+1,13,11,12,999,0,0
+1,14,10,13,999,0,0
+1,15,-1,-1,-1,-1,-1
+
+2,0,0,1,0,0,1
+2,1,1,2,0,0,1
+2,2,2,3,0,0,1
+2,3,3,4,0,0,1
+2,4,4,5,0,0,1
+2,5,5,0,0,0,1
+2,6,1,6,1,0,1
+2,7,6,7,1,0,1
+2,8,7,8,1,0,1
+2,9,8,9,1,0,1
+2,10,9,2,1,0,1
+2,11,7,10,999,0,0
+2,12,-1,-1,-1,-1,-1
+
+3,0,0,1,999,0,0
+3,1,1,2,999,0,0
+3,2,2,3,-1,-1,-1
+3,3,-1,-1,-1,-1,-1
+
+Figure 11 of the article
+SOLex:
+mol-core:A6,A4,A3,A2,N6,N5,N4a,N4n,N3a,N3m,N3n,N2n,N2a,N2m,N2f,N1a,N1m,N1n,Rp,Rm,Rn,Ra,br,br2,MEn,MEa,IHo,IHn,AAa,AAm,AAn,NS,RS,ANa,ANn,NN,RN,NO,RO,KO,Ni,VO,RCn,Arr
+0-total: 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+0-core1: 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+1-total: 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+1-core1: 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 3 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+2-total: 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+2-core1: 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+3-total: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+
+End of the reaction example
