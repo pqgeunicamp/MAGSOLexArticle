@@ -10,16 +10,13 @@ The models used consist of the following:
 - For reaction applications: the selection criteria for each reaction are identified, and when the molecule meets the conditions, the reaction is performed, generating the appropriate products with their corresponding SOLex and MAG matrices. The provided examples can be found in Chemical Reactions in Application examples of the article. We suggest examining Figure 10 for details.
 
 ## Usage instructions:
-1.	Run the binary from the project's root folder using the command: bin/MAGSOLexExamples. To run the property example, use the -Properties flag, and for the reaction example, use the -Reactions flag.
-2.	The user must choose from the following options:
-    - 0: Load the input mixture.
-    - 1: Use the Properties calculation algorithm, calculating the properties using group contribution methods with Joback and 1st-order Marrero and Gani.
-    - 2: Use the Reaction calculations algorithm, applying, when possible, the two reaction rules described to the molecule under analysis.
+1.	Run the binary from the project's root folder using the command: bin/MAGSOLexExamples.
+2.	To run the property example, use the -Properties flag, and for the reaction example, use the -Reactions flag.
+    2.1 Properties flag: use this flag to run the Properties calculation algorithm, calculating the properties using group contribution methods with Joback and 1st-order Marrero and Gani.
+  	2.2 Reactions flag: use this flag to run the Reaction calculations algorithm, applying, when possible, the two reaction rules described to the molecule under analysis.
 3.	The provided examples are based on the article and can be modified as needed in: ./run/ExProperties and ./run/ExReactions. The terminal output for these example runs can be viewed in the files:
-```markdown
-- [Property Example](https://github.com/tssdantas/rede_reacional_lite/blob/addPropertiesExample/log_terminal_PropertyExample.log)
-- [Reactions Example](https://github.com/tssdantas/rede_reacional_lite/blob/addPropertiesExample/log_terminal_ReactionsExample.log)
-```
+- [Property Example](https://github.com/pqgeunicamp/MAGSOLexArticle/blob/main/log_terminal_PropertyExample.log)
+- [Reactions Example](https://github.com/pqgeunicamp/MAGSOLexArticle/blob/main/log_terminal_ReactionsExample.log)
 
 ## Folder structure
 - *src*: Contains the source code files.
@@ -27,24 +24,25 @@ The models used consist of the following:
 - *run*: Contains input or output files generated during execution.
 
 ## Prerequisites
-1. Installing Linux
+1. Case 1 - Native Linux
+1.1 Installing Linux
 ```
 sudo apt update
 sudo apt install build-essential g++-12 libeigen3-dev
 #!/bin/bash
 ```
 
-2.	Line to be added
+1.2 Line to be added
 ```
 LINE='export PATH="/usr/include/eigen3:$PATH"'
 ```
 
-3.	Check if the line already exists in .bashrc
+1.3 Check if the line already exists in .bashrc
 ```
 grep -qxF "$LINE" ~/.bashrc || echo "$LINE" >> ~/.bashrc
 ```
 
-4.	DOCKER
+2. Case 2 - DOCKER
 ```
 docker build -t rede-reacional-lite .
 docker run -it rede-reacional-lite
