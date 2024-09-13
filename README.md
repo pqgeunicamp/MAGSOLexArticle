@@ -47,7 +47,7 @@ The models used consist of the following:
     To run the container:
     ```
     docker build -t magsolexarticle .
-    docker run -it magsolexarticle
+    docker run --name magsolexarticle -it magsolexarticle
     ```
 
 ## Usage instructions:
