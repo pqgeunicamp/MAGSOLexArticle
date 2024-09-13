@@ -1,3 +1,4 @@
+USERVAR = diegozd
 
 # compilador
 COMPILADOR = g++ -std=c++2a
@@ -25,7 +26,12 @@ FLAGS = -Wall\
 
 
 # includes: variável que pode indicar o caminho de pastas que contém arquivos .h ou .hpp do sistema ou do usuário
-INC = -I/usr/local/include/eigen3
+ifeq ($(USER),$(USERVAR))
+    INC = -I/usr/local/include/eigen3
+else
+    INC = -I/usr/include/eigen3
+endif
+
 
 # executando ações definidas
 all: info_in command info_out
